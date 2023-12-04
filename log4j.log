@@ -1,0 +1,66 @@
+17:51:43,642  INFO Util:31 - Util.conectar - lendo arquivo util.properties: 
+17:51:43,652  INFO Util:38 - sgbd => postgresql
+17:51:43,654  INFO Util:39 - banco => estacionamento
+17:51:43,654  INFO Util:40 - ip => localhost
+17:51:43,655  INFO Util:45 - configurando postgresql
+17:51:43,815 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+17:51:44,669  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
+17:51:45,357  INFO Version:44 - HHH000412: Hibernate ORM core version 6.3.1.Final
+17:51:45,604 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+17:51:45,608  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+17:51:47,182  WARN pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+17:51:47,199  INFO pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+17:51:47,199  INFO pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/estacionamento]
+17:51:47,200  INFO pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+17:51:47,200  INFO pooling:170 - HHH10001003: Autocommit mode: false
+17:51:47,211  INFO pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+17:51:48,484  WARN deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+17:51:53,974  INFO JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+17:51:54,093  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@33d7765a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+17:51:54,192 DEBUG SQL:135 - create table Registro (id serial not null, datahora varchar(255), operacao varchar(255), veiculo_id integer, primary key (id))
+17:51:54,249 DEBUG SQL:135 - create table TipoVeiculo (id serial not null, nome varchar(255), primary key (id))
+17:51:54,260 DEBUG SQL:135 - create table Veiculo (id serial not null, placa varchar(255), tipoveiculo_id integer, primary key (id))
+17:51:54,273 DEBUG SQL:135 - alter table if exists Registro add constraint FKoxhr7lq0crb22olc32dl5soj8 foreign key (veiculo_id) references Veiculo
+17:51:54,373 DEBUG SQL:135 - alter table if exists Veiculo add constraint FKox9h2pxd6taqdd86qe7yg2tpw foreign key (tipoveiculo_id) references TipoVeiculo
+17:51:56,297 DEBUG SQL:135 - select tv1_0.id,tv1_0.nome from TipoVeiculo tv1_0 where tv1_0.nome=?
+17:51:56,299 TRACE bind:24 - binding parameter (1:VARCHAR) <- [moto]
+17:51:56,339 DEBUG SQL:135 - insert into TipoVeiculo (nome) values (?)
+17:51:56,352 TRACE bind:24 - binding parameter (1:VARCHAR) <- [moto]
+17:51:56,422 DEBUG SQL:135 - select tv1_0.id,tv1_0.nome from TipoVeiculo tv1_0 where tv1_0.nome=?
+17:51:56,423 TRACE bind:24 - binding parameter (1:VARCHAR) <- [carro]
+17:51:56,426 DEBUG SQL:135 - insert into TipoVeiculo (nome) values (?)
+17:51:56,426 TRACE bind:24 - binding parameter (1:VARCHAR) <- [carro]
+17:51:56,444 DEBUG SQL:135 - select v1_0.id,v1_0.placa,v1_0.tipoveiculo_id from Veiculo v1_0 where v1_0.placa=?
+17:51:56,444 TRACE bind:24 - binding parameter (1:VARCHAR) <- [AAA1000]
+17:51:56,446 DEBUG SQL:135 - select tv1_0.id,tv1_0.nome from TipoVeiculo tv1_0 where tv1_0.nome=?
+17:51:56,447 TRACE bind:24 - binding parameter (1:VARCHAR) <- [moto]
+17:51:56,511 DEBUG SQL:135 - insert into Veiculo (placa,tipoveiculo_id) values (?,?)
+17:51:56,512 TRACE bind:24 - binding parameter (1:VARCHAR) <- [AAA1000]
+17:51:56,512 TRACE bind:24 - binding parameter (2:INTEGER) <- [1]
+17:51:56,536 DEBUG SQL:135 - select v1_0.id,v1_0.placa,v1_0.tipoveiculo_id from Veiculo v1_0 where v1_0.placa=?
+17:51:56,536 TRACE bind:24 - binding parameter (1:VARCHAR) <- [AAB1001]
+17:51:56,538 DEBUG SQL:135 - select tv1_0.id,tv1_0.nome from TipoVeiculo tv1_0 where tv1_0.nome=?
+17:51:56,538 TRACE bind:24 - binding parameter (1:VARCHAR) <- [carro]
+17:51:56,540 DEBUG SQL:135 - insert into Veiculo (placa,tipoveiculo_id) values (?,?)
+17:51:56,540 TRACE bind:24 - binding parameter (1:VARCHAR) <- [AAB1001]
+17:51:56,541 TRACE bind:24 - binding parameter (2:INTEGER) <- [2]
+17:51:56,544 DEBUG SQL:135 - select v1_0.id,v1_0.placa,v1_0.tipoveiculo_id from Veiculo v1_0 where v1_0.placa=?
+17:51:56,544 TRACE bind:24 - binding parameter (1:VARCHAR) <- [BCD1012]
+17:51:56,547 DEBUG SQL:135 - select tv1_0.id,tv1_0.nome from TipoVeiculo tv1_0 where tv1_0.nome=?
+17:51:56,547 TRACE bind:24 - binding parameter (1:VARCHAR) <- [carro]
+17:51:56,550 DEBUG SQL:135 - insert into Veiculo (placa,tipoveiculo_id) values (?,?)
+17:51:56,550 TRACE bind:24 - binding parameter (1:VARCHAR) <- [BCD1012]
+17:51:56,552 TRACE bind:24 - binding parameter (2:INTEGER) <- [2]
+17:51:56,556 DEBUG SQL:135 - select v1_0.id,v1_0.placa,v1_0.tipoveiculo_id from Veiculo v1_0 where v1_0.placa=?
+17:51:56,556 TRACE bind:24 - binding parameter (1:VARCHAR) <- [KFC2002]
+17:51:56,559 DEBUG SQL:135 - select tv1_0.id,tv1_0.nome from TipoVeiculo tv1_0 where tv1_0.nome=?
+17:51:56,559 TRACE bind:24 - binding parameter (1:VARCHAR) <- [carro]
+17:51:56,563 DEBUG SQL:135 - insert into Veiculo (placa,tipoveiculo_id) values (?,?)
+17:51:56,563 TRACE bind:24 - binding parameter (1:VARCHAR) <- [KFC2002]
+17:51:56,564 TRACE bind:24 - binding parameter (2:INTEGER) <- [2]
+17:51:56,569 DEBUG SQL:135 - select v1_0.id,v1_0.placa,v1_0.tipoveiculo_id from Veiculo v1_0 where v1_0.placa=?
+17:51:56,570 TRACE bind:24 - binding parameter (1:VARCHAR) <- [AAA1000]
+17:51:56,601 DEBUG SQL:135 - insert into Registro (datahora,operacao,veiculo_id) values (?,?,?)
+17:51:56,601 TRACE bind:24 - binding parameter (1:VARCHAR) <- [11/02/2023 11:55]
+17:51:56,601 TRACE bind:24 - binding parameter (2:VARCHAR) <- [entrada]
+17:51:56,602 TRACE bind:24 - binding parameter (3:INTEGER) <- [1]
