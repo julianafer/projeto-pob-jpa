@@ -21,15 +21,8 @@ public class DAOVeiculo extends DAO<Veiculo> {
 	}
 
 	public List<Veiculo> readAll(){
-		TypedQuery<Veiculo> query = manager.createQuery("select c from Carro c LEFT JOIN FETCH c.alugueis order by c.placa",Veiculo.class);
+		TypedQuery<Veiculo> query = manager.createQuery("select v from Veiculo v LEFT JOIN FETCH v.registros order by v.placa",Veiculo.class);
 		return  query.getResultList();
-	}
-	
-	public List<Veiculo> carrosNAlugueis(int n) {
-		// cliestes com 3 alugueis
-		TypedQuery<Veiculo> q = manager.createQuery("select c from Carro c LEFT JOIN FETCH c.alugueis where size(c.alugueis) = :x", Veiculo.class);
-		q.setParameter("x", n);
-		return q.getResultList();
 	}
 	
 }

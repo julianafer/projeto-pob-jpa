@@ -19,8 +19,7 @@ public class Cadastrar {
 			Fachada.criarVeiculo("BCD1012", "carro");
 			Fachada.criarVeiculo("KFC2002", "carro");
 			
-			Fachada.criarRegistro("11/02/2023 11:55", "AAA1000", "en"
-					+ "trada");
+			Fachada.criarRegistro("11/02/2023 11:55", "AAA1000", "entrada");
 			Fachada.criarRegistro("11/02/2023 11:58", "BCD1012", "entrada");
 			Fachada.criarRegistro("11/02/2023 12:37", "AAA1000", "saida");
 			Fachada.criarRegistro("12/02/2023 15:20", "AAB1001", "entrada");

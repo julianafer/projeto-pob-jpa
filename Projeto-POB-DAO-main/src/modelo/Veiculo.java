@@ -22,7 +22,9 @@ public class Veiculo {
 	private String placa;
 	@ManyToOne(cascade={CascadeType.PERSIST, CascadeType.MERGE},
 			fetch=FetchType.LAZY)
+	
 	private TipoVeiculo tipoveiculo; // carro, moto...
+	
 	@OneToMany(mappedBy= "veiculo" ,cascade={CascadeType.PERSIST, CascadeType.MERGE},
 			fetch=FetchType.LAZY)
 	private List<Registro> registros = new ArrayList<>(); // iserir, remover e localizar

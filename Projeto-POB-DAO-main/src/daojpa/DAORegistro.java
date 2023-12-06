@@ -21,8 +21,8 @@ public class DAORegistro extends DAO<Registro> {
 	}
 
 	public List<Registro> readAll(){
-		TypedQuery<Registro> q = manager.createQuery("select a from Aluguel a LEFT JOIN FETCH a.carro  JOIN FETCH a.cliente order by a.id", Registro.class);
-		return  q.getResultList();
+		TypedQuery<Registro> q = manager.createQuery("select r from Registro r LEFT JOIN FETCH r.veiculo order by r.id", Registro.class);
+		return q.getResultList();
 	}
 
 
@@ -30,19 +30,6 @@ public class DAORegistro extends DAO<Registro> {
 	//  consultas
 	//--------------------------------------------
 
-	public List<Registro> alugueisModelo(String modelo){
-		//alugueis contendo carro de modelo 'palio'
-		TypedQuery<Registro> q = manager.createQuery("select a from Aluguel a where a.carro.modelo = :x", Registro.class);
-		q.setParameter("x", modelo);
-		
-		return  q.getResultList();
-	}
-
 	
-	public List<Registro> alugueisFinalizados(){
-		TypedQuery<Registro> q = manager.createQuery("select a from Aluguel a where a.finalizado = true", Registro.class);
-		
-		return  q.getResultList();
-	}
 	
 }
