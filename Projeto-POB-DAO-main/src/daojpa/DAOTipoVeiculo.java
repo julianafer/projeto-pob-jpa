@@ -1,5 +1,7 @@
 package daojpa;
 
+import java.util.List;
+
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.TypedQuery;
 import modelo.TipoVeiculo;
@@ -16,6 +18,11 @@ public class DAOTipoVeiculo extends DAO<TipoVeiculo> {
 		}catch(NoResultException e){
 			return null;
 		}
+	}
+	
+	public List<TipoVeiculo> readAll(){
+		TypedQuery<TipoVeiculo> query = manager.createQuery("select tp from TipoVeiculo tp order by tp.nome",TipoVeiculo.class);
+		return  query.getResultList();
 	}
 	
 }
