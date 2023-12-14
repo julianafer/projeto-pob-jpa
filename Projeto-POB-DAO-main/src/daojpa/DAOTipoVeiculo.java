@@ -15,7 +15,7 @@ public class DAOTipoVeiculo extends DAO<TipoVeiculo> {
 			q.setParameter("nome", nome);
 			TipoVeiculo tv =  q.getSingleResult();
 			return tv;
-		}catch(NoResultException e){
+		} catch(NoResultException e){
 			return null;
 		}
 	}

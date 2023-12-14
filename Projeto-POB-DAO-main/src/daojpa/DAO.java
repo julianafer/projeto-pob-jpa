@@ -1,10 +1,8 @@
-
 /**********************************
  * IFPB - SI
  * POB - Persistencia de Objetos
  * Prof. Fausto Ayres
  **********************************/
-
 
 package daojpa;
 
@@ -21,6 +19,7 @@ import jakarta.persistence.TypedQuery;
 
 
 public abstract class DAO<T> implements DAOInterface<T> {
+	
 	protected static EntityManager manager;
 
 	public DAO(){}
@@ -36,15 +35,16 @@ public abstract class DAO<T> implements DAOInterface<T> {
 	public void create(T obj){
 		manager.persist(obj);
 	}
+	
 	public abstract T read(Object chave);
 
 	public T update(T obj){
 		return manager.merge(obj);
 	}
+	
 	public void delete(T obj) {
 		manager.remove(obj);
 	}
-
 
 	@SuppressWarnings("unchecked")
 	public List<T> readAll(){
@@ -76,18 +76,20 @@ public abstract class DAO<T> implements DAOInterface<T> {
 
 	}
 
-
-	//----------------------- TRANSA«√O   ----------------------
+	//----------------------- TRANSA√á√ÉO   ----------------------
+	
 	public static void begin(){
 		if(!manager.getTransaction().isActive())
 			manager.getTransaction().begin();
 	}
+	
 	public static void commit(){
 		if(manager.getTransaction().isActive()){
 			manager.getTransaction().commit();
-			manager.clear();		// ---- esvazia o cache de objetos, se habilitado----
+			manager.clear(); // ---- esvazia o cache de objetos, se habilitado----
 		}
 	}
+	
 	public static void rollback(){
 		if(manager.getTransaction().isActive())
 			manager.getTransaction().rollback();
@@ -98,7 +100,7 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		manager.lock(obj, LockModeType.PESSIMISTIC_WRITE); 
 	}
 
-	// acesso direto a classe de conex„o jdbc
+	// acesso direto a classe de conex√£o jdbc
 	public static Connection getConnectionJdbc() {
 		try {
 			EntityManagerFactory factory = manager.getEntityManagerFactory();
@@ -115,4 +117,3 @@ public abstract class DAO<T> implements DAOInterface<T> {
 	}
 
 }
-

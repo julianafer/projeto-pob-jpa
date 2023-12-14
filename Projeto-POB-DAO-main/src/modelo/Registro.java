@@ -14,11 +14,9 @@ public class Registro {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id; // gerar id na classe util do exemplo locadora (eu acho)
-	
 	private String datahora;
 	
-	@ManyToOne(cascade={CascadeType.PERSIST, CascadeType.MERGE},
-			fetch=FetchType.LAZY)
+	@ManyToOne(cascade={CascadeType.PERSIST, CascadeType.MERGE}, fetch=FetchType.LAZY)
 	private Veiculo veiculo;
 	private String operacao; // entrada ou saida
 	
@@ -29,9 +27,7 @@ public class Registro {
 		this.operacao = operacao;
 	}
 	
-	public Registro() {
-		
-	}
+	public Registro() { }
 
 	public int getId() {
 		return id;
@@ -69,4 +65,5 @@ public class Registro {
 	public String toString() {
 		return "Registro: id=" + id + ", datahora=" + datahora + ", veiculo=" + veiculo.getPlaca() + ", operacao=" + operacao;
 	}
+	
 }

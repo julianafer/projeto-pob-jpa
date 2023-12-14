@@ -5,19 +5,24 @@ import regras_negocio.Fachada;
 public class Cadastrar {
 
 	public Cadastrar() {
+		
 		try {
 			
 			Fachada.inicializar();
 			
-			System.out.println("cadastrando...");
+			System.out.println("cadastrando tipo ...");
 			
 			Fachada.criarTipo("moto");
 			Fachada.criarTipo("carro");
+			
+			System.out.println("cadastrando veiculo ...");
 			
 			Fachada.criarVeiculo("AAA1000", "moto");
 			Fachada.criarVeiculo("AAB1001", "carro");
 			Fachada.criarVeiculo("BCD1012", "carro");
 			Fachada.criarVeiculo("KFC2002", "carro");
+			
+			System.out.println("cadastrando registro ...");
 			
 			Fachada.criarRegistro("11/02/2023 11:55", "AAA1000", "entrada");
 			Fachada.criarRegistro("11/02/2023 11:58", "BCD1012", "entrada");
@@ -36,8 +41,8 @@ public class Cadastrar {
 		System.out.println("\nfim do programa !");
 	}
 
-
 	public static void main(String[] args) {
 		new Cadastrar();
 	}
+	
 }

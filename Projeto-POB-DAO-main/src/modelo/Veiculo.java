@@ -18,15 +18,12 @@ public class Veiculo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
 	private String placa;
-	@ManyToOne(cascade={CascadeType.PERSIST, CascadeType.MERGE},
-			fetch=FetchType.LAZY)
 	
+	@ManyToOne(cascade={CascadeType.PERSIST, CascadeType.MERGE}, fetch=FetchType.LAZY)
 	private TipoVeiculo tipoveiculo; // carro, moto...
 	
-	@OneToMany(mappedBy= "veiculo" ,cascade={CascadeType.PERSIST, CascadeType.MERGE},
-			fetch=FetchType.LAZY)
+	@OneToMany(mappedBy = "veiculo", cascade={CascadeType.PERSIST, CascadeType.MERGE}, fetch=FetchType.LAZY)
 	private List<Registro> registros = new ArrayList<>(); // iserir, remover e localizar
 	
 	public Veiculo(String placa, TipoVeiculo tipoveiculo) {
@@ -35,9 +32,7 @@ public class Veiculo {
 		this.tipoveiculo = tipoveiculo;
 	}
 	
-	public Veiculo() {
-		
-	}
+	public Veiculo() { }
 
 	public String getPlaca() {
 		return placa;

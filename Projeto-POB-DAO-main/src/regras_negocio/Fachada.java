@@ -67,8 +67,9 @@ public class Fachada {
             throw new Exception("campo vazio");
 		
 		Registro registro = new Registro(datahora, veiculo, operacao);
-		Fachada.addRegistroEmVeiculo(veiculo, registro);
 		daoregistro.create(registro);
+		Fachada.addRegistroEmVeiculo(veiculo, registro);
+		daoveiculo.update(veiculo);
 		DAO.commit();
 		return registro;
 	}
@@ -190,34 +191,34 @@ public class Fachada {
 		return resultados;
 	}
 	
-//	public static List<Registro> listarRegistros(){
-//		DAO.begin();
-//		List<Registro> resultados =  daoregistro.readAll();
-//		DAO.commit();
-//		return resultados;
-//	}
-//	
-//	// ---- Consultas
-//	
-//	public static List<Registro> registrosEmData(String data) {
-//		DAO.begin();
-//		List<Registro> resultado= daoregistro.registrosData(data);
-//		DAO.commit();
-//		return resultado;
-//	} 
-//	
-//	public static List<Veiculo> veiculosEmData(String data){
-//		DAO.begin();
-//		List<Veiculo> resultado= daoveiculo.veiculosData(data);
-//		DAO.commit();
-//		return resultado;
-//	}
-//	
-//	public static List<Veiculo> veiculosNRegistros(int n){
-//		DAO.begin();
-//		List<Veiculo> resultado= daoveiculo.veiculosN(n);
-//		DAO.commit();
-//		return resultado;
-//	}
+	public static List<Registro> listarRegistros(){
+		DAO.begin();
+		List<Registro> resultados =  daoregistro.readAll();
+		DAO.commit();
+		return resultados;
+	}
+	
+	// ---- Consultas
+	
+	public static List<Registro> registrosEmData(String data) {
+		DAO.begin();
+		List<Registro> resultado= daoregistro.registrosData(data);
+		DAO.commit();
+		return resultado;
+	} 
+	
+	public static List<Veiculo> veiculosEmData(String data){
+		DAO.begin();
+		List<Veiculo> resultado= daoveiculo.veiculosData(data);
+		DAO.commit();
+		return resultado;
+	}
+	
+	public static List<Veiculo> veiculosNRegistros(int n){
+		DAO.begin();
+		List<Veiculo> resultado= daoveiculo.veiculosN(n);
+		DAO.commit();
+		return resultado;
+	}
 	
 }
