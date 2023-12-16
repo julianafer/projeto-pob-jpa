@@ -21,7 +21,7 @@ public class DAOTipoVeiculo extends DAO<TipoVeiculo> {
 	}
 	
 	public List<TipoVeiculo> readAll(){
-		TypedQuery<TipoVeiculo> query = manager.createQuery("select tp from TipoVeiculo tp order by tp.nome",TipoVeiculo.class);
+		TypedQuery<TipoVeiculo> query = manager.createQuery("select tp from TipoVeiculo tp order by tp.id",TipoVeiculo.class);
 		return  query.getResultList();
 	}
 	

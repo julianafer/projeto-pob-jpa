@@ -11,7 +11,7 @@ public class DAOVeiculo extends DAO<Veiculo> {
 	public Veiculo read (Object chave){
 		try{
 			String placa = (String) chave;
-			TypedQuery<Veiculo> q = manager.createQuery("select v from Veiculo v LEFT JOIN FETCH v.registros where v.placa=:pla",Veiculo.class);
+			TypedQuery<Veiculo> q = manager.createQuery("select v from Veiculo v LEFT JOIN FETCH v.registros LEFT JOIN FETCH v.tipoveiculo where v.placa=:pla",Veiculo.class);
 			q.setParameter("pla", placa);
 			Veiculo v =  q.getSingleResult();
 			return v;
@@ -21,7 +21,7 @@ public class DAOVeiculo extends DAO<Veiculo> {
 	}
 
 	public List<Veiculo> readAll(){
-		TypedQuery<Veiculo> query = manager.createQuery("select v from Veiculo v LEFT JOIN FETCH v.registros order by v.placa",Veiculo.class);
+		TypedQuery<Veiculo> query = manager.createQuery("select v from Veiculo v LEFT JOIN FETCH v.registros LEFT JOIN FETCH v.tipoveiculo order by v.id",Veiculo.class);
 		return  query.getResultList();
 	}
 	
@@ -30,7 +30,7 @@ public class DAOVeiculo extends DAO<Veiculo> {
 	//--------------------------------------------
 	
 	public List<Veiculo> veiculosData(String data){
-		TypedQuery<Veiculo> query = manager.createQuery("select v from Veiculo v LEFT JOIN FETCH v.registros r LEFT JOIN FETCH v.tipoveiculo order where r.datahora = :d",Veiculo.class);
+		TypedQuery<Veiculo> query = manager.createQuery("select v from Veiculo v LEFT JOIN FETCH v.registros r LEFT JOIN FETCH v.tipoveiculo order where r.datahora LIKE :d",Veiculo.class);
 		query.setParameter("d", data+"%");
 		return  query.getResultList();
 	}

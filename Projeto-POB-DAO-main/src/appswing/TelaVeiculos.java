@@ -96,7 +96,7 @@ public class TelaVeiculos {
 		table.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				label_4.setText("selecionado="+ (String) table.getValueAt( table.getSelectedRow(), 0));
+				label_4.setText("selecionado="+ (String) table.getValueAt( table.getSelectedRow(), 1));
 			}
 		});
 		table.setGridColor(Color.BLACK);
@@ -144,7 +144,7 @@ public class TelaVeiculos {
 					String placa = textField.getText();
 					String tipo = textField_1.getText();
 					Fachada.criarVeiculo(placa, tipo);
-					label.setText("carro criado: "+ placa);
+					label.setText("veiculo criado: "+ placa);
 					listagem();
 				}
 				catch(Exception ex) {
@@ -156,14 +156,27 @@ public class TelaVeiculos {
 		btnCriarVeculo.setBounds(324, 237, 153, 23);
 		frame.getContentPane().add(btnCriarVeculo);
 
-		button = new JButton("Listar");
+		button = new JButton("Mostrar Registros");
 		button.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				listagem();
+				if (table.getSelectedRow() >= 0){
+					String placa = (String) table.getValueAt( table.getSelectedRow(), 1);
+					try {
+						TelaMostrarRegistros tela = new TelaMostrarRegistros(placa);
+					} catch (Exception e1) {
+						label.setText(e1.getMessage());
+					}
+
+					// Fachada.excluirVeiculo(placa);
+					// label.setText("veiculo apagado" );
+					// listagem();
+				}
+				else
+					label.setText("nao selecionado");
 			}
 		});
-		button.setBounds(448, 271, 89, 23);
+		button.setBounds(410, 271, 150, 23);
 		frame.getContentPane().add(button);
 
 		label_3 = new JLabel("tipo:");
@@ -184,7 +197,7 @@ public class TelaVeiculos {
 				try{
 					if (table.getSelectedRow() >= 0){	
 						label.setText("nao implementado " );
-						String placa = (String) table.getValueAt( table.getSelectedRow(), 0);
+						String placa = (String) table.getValueAt( table.getSelectedRow(), 1);
 
 						Fachada.excluirVeiculo(placa);
 						label.setText("veiculo apagado" );
@@ -210,13 +223,13 @@ public class TelaVeiculos {
 			DefaultTableModel model = new DefaultTableModel();
 
 			//adicionar colunas no model
+			model.addColumn("id");
 			model.addColumn("placa");
 			model.addColumn("tipo");
 			
 			//adicionar linhas no model
 			for(Veiculo vei : lista) {
-//				TipoVeiculo tipo = vei.getTipoveiculo();
-				model.addRow(new Object[]{vei.getPlaca(), vei.getTipoveiculo()});
+				model.addRow(new Object[]{vei.getId(), vei.getPlaca(), vei.getTipoveiculo().getNome()});
 			}
 
 			//atualizar model no table (visualizacao)

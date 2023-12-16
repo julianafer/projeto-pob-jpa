@@ -94,7 +94,7 @@ public class TelaTipos {
 		table.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				label_4.setText("selecionado="+ (String) table.getValueAt( table.getSelectedRow(), 0));
+				label_4.setText("selecionado="+ (String) table.getValueAt( table.getSelectedRow(), 1));
 			}
 		});
 		table.setGridColor(Color.BLACK);
@@ -129,7 +129,7 @@ public class TelaTipos {
 					}
 					String nome = textField_1.getText();
 					Fachada.criarTipo(nome);
-					label.setText("cliente criado: "+ nome);
+					label.setText("tipo de veículo criado: "+ nome);
 					listagem();
 				}
 				catch(Exception ex) {
@@ -169,9 +169,10 @@ public class TelaTipos {
 				try{
 					if (table.getSelectedRow() >= 0){	
 						label.setText("nao implementado " );
-						String nome = (String) table.getValueAt( table.getSelectedRow(), 0);
+						String nome = (String) table.getValueAt( table.getSelectedRow(), 1);
+
 						Fachada.excluirTipo(nome);
-						label.setText("tipo de veículo apagado" );
+						label.setText("tipo apagado" );
 						listagem();
 					}
 					else
@@ -195,11 +196,12 @@ public class TelaTipos {
 			DefaultTableModel model = new DefaultTableModel();
 
 			//adicionar colunas no model
+			model.addColumn("id");
 			model.addColumn("nome");
 
 			//adicionar linhas no model
 			for(TipoVeiculo tipo : lista) {
-				model.addRow(new Object[]{tipo.getNome()} );
+				model.addRow(new Object[]{tipo.getId(), tipo.getNome()} );
 			}
 
 			//atualizar model no table (visualizacao)

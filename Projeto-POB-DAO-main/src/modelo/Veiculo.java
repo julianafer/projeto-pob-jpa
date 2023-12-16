@@ -33,6 +33,14 @@ public class Veiculo {
 	}
 	
 	public Veiculo() { }
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getPlaca() {
 		return placa;

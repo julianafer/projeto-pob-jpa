@@ -61,8 +61,6 @@ public class Fachada {
 		if (veiculo==null)
 			throw new Exception("veiculo " + placa + " inexistente");
 		
-		List<Registro> registros = veiculo.getRegistros();
-		
 		if (operacao == null)
             throw new Exception("campo vazio");
 		
@@ -110,18 +108,25 @@ public class Fachada {
 	// ---- excluir
 
 	public static void excluirTipo(String nome) throws Exception {
-		DAO.begin();
-		TipoVeiculo tipo = daotipoveiculo.read(nome);
-		if(tipo==null) 
-			throw new Exception ("Tipo " + nome + " incorreto para exclusao");
-		
-		for (Veiculo v : listarVeiculos()) {
-			if (v.getTipoveiculo().equals(tipo))
-				daoveiculo.delete(v);
-		}
+	    DAO.begin();
+	    TipoVeiculo tipo = daotipoveiculo.read(nome);
+	    if (tipo == null) 
+	        throw new Exception("Tipo " + nome + " incorreto para exclusao");
 
-		daotipoveiculo.delete(tipo);
-		DAO.commit();
+	    for (Veiculo v : daoveiculo.readAll()) {
+	        if (v.getTipoveiculo().getNome().equals(tipo.getNome())) {
+	            Fachada.excluirVeiculo(v.getPlaca());
+	        }
+	    }
+
+	    // Verifique se a entidade está no contexto de persistência antes de excluir
+	    tipo = daotipoveiculo.read(nome);
+
+	    if (tipo != null) {
+	        daotipoveiculo.delete(tipo);
+	    }
+
+	    DAO.commit();
 	}
 	
 	public static void excluirVeiculo(String placa) throws Exception{
@@ -154,24 +159,29 @@ public class Fachada {
 	// ---- localizar
 	
 	public static TipoVeiculo localizarTipo(String nome) throws Exception{
+		DAO.begin();
 		TipoVeiculo tipo = daotipoveiculo.read(nome);
 		if (tipo==null)
 			throw new Exception("Tipo: " + nome + " inexistente");
+		DAO.commit();
 		return tipo;
 	}
 	
 	public static Veiculo localizarVeiculo(String placa) throws Exception{
+		DAO.begin();
 		Veiculo veiculo = daoveiculo.read(placa);
 		if (veiculo==null)
 			throw new Exception("Veiculo da placa: " + placa + " não existe");
+		DAO.commit();
 		return veiculo;
 	};
 
 	public static Registro localizarRegistro(int id) throws Exception{
+		DAO.begin();
 		Registro registro = daoregistro.read(id);
 		if (registro==null)
 			throw new Exception("ID: " + id + " não existe");
-		
+		DAO.commit();
 		return registro;
 	}
 
