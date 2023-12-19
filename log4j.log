@@ -1,165 +1,168 @@
-15:29:00,094  INFO Util:31 - Util.conectar - lendo arquivo util.properties: 
-15:29:00,115  INFO Util:38 - sgbd => postgresql
-15:29:00,115  INFO Util:39 - banco => estacionamento
-15:29:00,116  INFO Util:40 - ip => localhost
-15:29:00,116  INFO Util:45 - configurando postgresql
-15:29:00,207 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
-15:29:00,583  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
-15:29:00,859  INFO Version:44 - HHH000412: Hibernate ORM core version 6.3.1.Final
-15:29:01,065 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
-15:29:01,069  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
-15:29:02,071  WARN pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
-15:29:02,084  INFO pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-15:29:02,085  INFO pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/estacionamento]
-15:29:02,085  INFO pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
-15:29:02,086  INFO pooling:170 - HHH10001003: Autocommit mode: false
-15:29:02,093  INFO pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
-15:29:02,964  WARN deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-15:29:06,216  INFO JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-15:29:06,284  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3eb02051] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-15:29:17,967 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id order by v1_0.id
-15:29:21,423  INFO pooling:601 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/estacionamento]
-15:29:23,222  INFO Util:31 - Util.conectar - lendo arquivo util.properties: 
-15:29:23,223  INFO Util:38 - sgbd => postgresql
-15:29:23,224  INFO Util:39 - banco => estacionamento
-15:29:23,224  INFO Util:40 - ip => localhost
-15:29:23,224  INFO Util:45 - configurando postgresql
-15:29:23,245  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
-15:29:23,252 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
-15:29:23,252  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
-15:29:23,400  WARN pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
-15:29:23,401  INFO pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-15:29:23,402  INFO pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/estacionamento]
-15:29:23,402  INFO pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
-15:29:23,402  INFO pooling:170 - HHH10001003: Autocommit mode: false
-15:29:23,403  INFO pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
-15:29:23,581  WARN deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-15:29:23,843  INFO JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-15:29:23,844  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5c373846] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-15:29:24,010 DEBUG SQL:135 - select r1_0.id,r1_0.datahora,r1_0.operacao,v1_0.id,v1_0.placa,v1_0.tipoveiculo_id from Registro r1_0 left join Veiculo v1_0 on v1_0.id=r1_0.veiculo_id order by r1_0.id
-15:29:29,421  INFO pooling:601 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/estacionamento]
-15:29:30,418  INFO Util:31 - Util.conectar - lendo arquivo util.properties: 
-15:29:30,419  INFO Util:38 - sgbd => postgresql
-15:29:30,419  INFO Util:39 - banco => estacionamento
-15:29:30,420  INFO Util:40 - ip => localhost
-15:29:30,420  INFO Util:45 - configurando postgresql
-15:29:30,449  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
-15:29:30,453 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
-15:29:30,454  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
-15:29:30,579  WARN pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
-15:29:30,579  INFO pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-15:29:30,580  INFO pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/estacionamento]
-15:29:30,580  INFO pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
-15:29:30,583  INFO pooling:170 - HHH10001003: Autocommit mode: false
-15:29:30,583  INFO pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
-15:29:30,899  WARN deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-15:29:31,085  INFO JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-15:29:31,086  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@67fd94fc] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-15:29:32,237  INFO pooling:601 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/estacionamento]
-15:29:34,528  INFO Util:31 - Util.conectar - lendo arquivo util.properties: 
-15:29:34,529  INFO Util:38 - sgbd => postgresql
-15:29:34,529  INFO Util:39 - banco => estacionamento
-15:29:34,530  INFO Util:40 - ip => localhost
-15:29:34,530  INFO Util:45 - configurando postgresql
-15:29:34,547  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
-15:29:34,555 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
-15:29:34,556  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
-15:29:34,645  WARN pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
-15:29:34,645  INFO pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-15:29:34,646  INFO pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/estacionamento]
-15:29:34,646  INFO pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
-15:29:34,647  INFO pooling:170 - HHH10001003: Autocommit mode: false
-15:29:34,647  INFO pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
-15:29:34,833  WARN deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-15:29:34,976  INFO JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-15:29:34,979  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@374dadc2] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-15:29:35,173 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id order by v1_0.id
-15:29:35,861  INFO pooling:601 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/estacionamento]
-15:29:37,208  INFO Util:31 - Util.conectar - lendo arquivo util.properties: 
-15:29:37,209  INFO Util:38 - sgbd => postgresql
-15:29:37,209  INFO Util:39 - banco => estacionamento
-15:29:37,209  INFO Util:40 - ip => localhost
-15:29:37,210  INFO Util:45 - configurando postgresql
-15:29:37,217  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
-15:29:37,224 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
-15:29:37,224  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
-15:29:37,327  WARN pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
-15:29:37,328  INFO pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-15:29:37,329  INFO pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/estacionamento]
-15:29:37,329  INFO pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
-15:29:37,330  INFO pooling:170 - HHH10001003: Autocommit mode: false
-15:29:37,330  INFO pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
-15:29:37,592  WARN deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-15:29:37,759  INFO JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-15:29:37,760  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1a5f101d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-15:29:37,919 DEBUG SQL:135 - select r1_0.id,r1_0.datahora,r1_0.operacao,v1_0.id,v1_0.placa,v1_0.tipoveiculo_id from Registro r1_0 left join Veiculo v1_0 on v1_0.id=r1_0.veiculo_id order by r1_0.id
-15:29:49,885  INFO pooling:601 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/estacionamento]
-15:29:50,756  INFO Util:31 - Util.conectar - lendo arquivo util.properties: 
-15:29:50,757  INFO Util:38 - sgbd => postgresql
-15:29:50,757  INFO Util:39 - banco => estacionamento
-15:29:50,757  INFO Util:40 - ip => localhost
-15:29:50,758  INFO Util:45 - configurando postgresql
-15:29:50,773  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
-15:29:50,791 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
-15:29:50,791  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
-15:29:50,855  WARN pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
-15:29:50,855  INFO pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-15:29:50,855  INFO pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/estacionamento]
-15:29:50,857  INFO pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
-15:29:50,857  INFO pooling:170 - HHH10001003: Autocommit mode: false
-15:29:50,858  INFO pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
-15:29:51,008  WARN deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-15:29:51,156  INFO JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-15:29:51,156  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@167162a2] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-15:29:54,657 DEBUG SQL:135 - select r1_0.id,r1_0.datahora,r1_0.operacao,v1_0.id,v1_0.placa,v1_0.tipoveiculo_id from Registro r1_0 left join Veiculo v1_0 on v1_0.id=r1_0.veiculo_id where r1_0.datahora like ? escape ''
-15:29:54,658 TRACE bind:24 - binding parameter (1:VARCHAR) <- [12/02/2023%]
-15:30:01,851 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id where r1_0.datahora like ? escape ''
-15:30:01,852 TRACE bind:24 - binding parameter (1:VARCHAR) <- [12/02/2023%]
-15:30:08,477 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id where (select count(1) from Registro r2_0 where v1_0.id=r2_0.veiculo_id)>?
-15:30:08,477 TRACE bind:24 - binding parameter (1:INTEGER) <- [1]
-15:30:13,373  INFO pooling:601 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/estacionamento]
-15:30:15,803  INFO Util:31 - Util.conectar - lendo arquivo util.properties: 
-15:30:15,804  INFO Util:38 - sgbd => postgresql
-15:30:15,804  INFO Util:39 - banco => estacionamento
-15:30:15,805  INFO Util:40 - ip => localhost
-15:30:15,805  INFO Util:45 - configurando postgresql
-15:30:15,828  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
-15:30:15,831 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
-15:30:15,832  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
-15:30:15,904  WARN pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
-15:30:15,904  INFO pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-15:30:15,905  INFO pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/estacionamento]
-15:30:15,905  INFO pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
-15:30:15,905  INFO pooling:170 - HHH10001003: Autocommit mode: false
-15:30:15,906  INFO pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
-15:30:16,073  WARN deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-15:30:16,282  INFO JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-15:30:16,282  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1fa4590a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-15:30:16,381 DEBUG SQL:135 - select r1_0.id,r1_0.datahora,r1_0.operacao,v1_0.id,v1_0.placa,v1_0.tipoveiculo_id from Registro r1_0 left join Veiculo v1_0 on v1_0.id=r1_0.veiculo_id order by r1_0.id
-15:30:21,773  INFO pooling:601 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/estacionamento]
-15:30:23,829  INFO Util:31 - Util.conectar - lendo arquivo util.properties: 
-15:30:23,830  INFO Util:38 - sgbd => postgresql
-15:30:23,830  INFO Util:39 - banco => estacionamento
-15:30:23,830  INFO Util:40 - ip => localhost
-15:30:23,831  INFO Util:45 - configurando postgresql
-15:30:23,842  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
-15:30:23,848 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
-15:30:23,849  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
-15:30:23,900  WARN pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
-15:30:23,901  INFO pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-15:30:23,901  INFO pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/estacionamento]
-15:30:23,902  INFO pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
-15:30:23,902  INFO pooling:170 - HHH10001003: Autocommit mode: false
-15:30:23,902  INFO pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
-15:30:24,042  WARN deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-15:30:24,198  INFO JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-15:30:24,199  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@72f4a93a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-15:30:28,635 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id where (select count(1) from Registro r2_0 where v1_0.id=r2_0.veiculo_id)>?
-15:30:28,638 TRACE bind:24 - binding parameter (1:INTEGER) <- [2]
-15:30:31,623 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id where (select count(1) from Registro r2_0 where v1_0.id=r2_0.veiculo_id)>?
-15:30:31,623 TRACE bind:24 - binding parameter (1:INTEGER) <- [1]
-15:30:34,094 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id where (select count(1) from Registro r2_0 where v1_0.id=r2_0.veiculo_id)>?
-15:30:34,094 TRACE bind:24 - binding parameter (1:INTEGER) <- [3]
-15:30:36,469 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id where (select count(1) from Registro r2_0 where v1_0.id=r2_0.veiculo_id)>?
-15:30:36,470 TRACE bind:24 - binding parameter (1:INTEGER) <- [0]
-15:30:38,749  INFO pooling:601 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/estacionamento]
+18:41:17,205  INFO Util:31 - Util.conectar - lendo arquivo util.properties: 
+18:41:17,230  INFO Util:38 - sgbd => postgresql
+18:41:17,230  INFO Util:39 - banco => estacionamento
+18:41:17,231  INFO Util:40 - ip => localhost
+18:41:17,231  INFO Util:45 - configurando postgresql
+18:41:17,362 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+18:41:18,205  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
+18:41:18,552  INFO Version:44 - HHH000412: Hibernate ORM core version 6.3.1.Final
+18:41:19,088 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+18:41:19,094  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+18:41:20,880  WARN pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+18:41:20,898  INFO pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+18:41:20,899  INFO pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/estacionamento]
+18:41:20,899  INFO pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+18:41:20,899  INFO pooling:170 - HHH10001003: Autocommit mode: false
+18:41:20,907  INFO pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+18:41:22,818  WARN deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+18:41:27,350  INFO JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+18:41:27,419  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2aa3e7ca] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18:41:30,696 DEBUG SQL:135 - select tv1_0.id,tv1_0.nome from TipoVeiculo tv1_0 order by tv1_0.id
+18:41:32,402  INFO pooling:601 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/estacionamento]
+18:41:33,636  INFO Util:31 - Util.conectar - lendo arquivo util.properties: 
+18:41:33,637  INFO Util:38 - sgbd => postgresql
+18:41:33,638  INFO Util:39 - banco => estacionamento
+18:41:33,638  INFO Util:40 - ip => localhost
+18:41:33,638  INFO Util:45 - configurando postgresql
+18:41:33,649  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
+18:41:33,653 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+18:41:33,653  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+18:41:33,774  WARN pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+18:41:33,775  INFO pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+18:41:33,776  INFO pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/estacionamento]
+18:41:33,777  INFO pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+18:41:33,777  INFO pooling:170 - HHH10001003: Autocommit mode: false
+18:41:33,778  INFO pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+18:41:34,025  WARN deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+18:41:34,229  INFO JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+18:41:34,229  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3d1c5d15] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18:41:34,527 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id order by v1_0.id
+18:41:39,073  INFO pooling:601 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/estacionamento]
+18:41:40,995  INFO Util:31 - Util.conectar - lendo arquivo util.properties: 
+18:41:40,996  INFO Util:38 - sgbd => postgresql
+18:41:40,997  INFO Util:39 - banco => estacionamento
+18:41:40,997  INFO Util:40 - ip => localhost
+18:41:40,997  INFO Util:45 - configurando postgresql
+18:41:41,011  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
+18:41:41,019 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+18:41:41,019  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+18:41:41,141  WARN pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+18:41:41,142  INFO pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+18:41:41,142  INFO pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/estacionamento]
+18:41:41,143  INFO pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+18:41:41,145  INFO pooling:170 - HHH10001003: Autocommit mode: false
+18:41:41,145  INFO pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+18:41:41,304  WARN deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+18:41:41,500  INFO JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+18:41:41,501  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@69e3cdb5] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18:41:41,769 DEBUG SQL:135 - select r1_0.id,r1_0.datahora,r1_0.operacao,v1_0.id,v1_0.placa,v1_0.tipoveiculo_id from Registro r1_0 left join Veiculo v1_0 on v1_0.id=r1_0.veiculo_id order by r1_0.id
+18:41:47,233  INFO pooling:601 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/estacionamento]
+18:41:48,679  INFO Util:31 - Util.conectar - lendo arquivo util.properties: 
+18:41:48,681  INFO Util:38 - sgbd => postgresql
+18:41:48,681  INFO Util:39 - banco => estacionamento
+18:41:48,684  INFO Util:40 - ip => localhost
+18:41:48,684  INFO Util:45 - configurando postgresql
+18:41:48,744  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
+18:41:48,751 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+18:41:48,752  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+18:41:48,854  WARN pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+18:41:48,873  INFO pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+18:41:48,874  INFO pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/estacionamento]
+18:41:48,874  INFO pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+18:41:48,875  INFO pooling:170 - HHH10001003: Autocommit mode: false
+18:41:48,875  INFO pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+18:41:49,218  WARN deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+18:41:49,373  INFO JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+18:41:49,376  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@231b8e43] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18:41:49,487 DEBUG SQL:135 - select tv1_0.id,tv1_0.nome from TipoVeiculo tv1_0 order by tv1_0.id
+18:41:50,656  INFO pooling:601 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/estacionamento]
+18:41:52,306  INFO Util:31 - Util.conectar - lendo arquivo util.properties: 
+18:41:52,308  INFO Util:38 - sgbd => postgresql
+18:41:52,308  INFO Util:39 - banco => estacionamento
+18:41:52,310  INFO Util:40 - ip => localhost
+18:41:52,311  INFO Util:45 - configurando postgresql
+18:41:52,321  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
+18:41:52,324 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+18:41:52,327  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+18:41:52,432  WARN pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+18:41:52,433  INFO pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+18:41:52,433  INFO pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/estacionamento]
+18:41:52,434  INFO pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+18:41:52,434  INFO pooling:170 - HHH10001003: Autocommit mode: false
+18:41:52,436  INFO pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+18:41:52,777  WARN deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+18:41:52,922  INFO JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+18:41:52,923  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@59887374] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18:41:53,037 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id order by v1_0.id
+18:41:54,528 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id where v1_0.placa=?
+18:41:54,530 TRACE bind:24 - binding parameter (1:VARCHAR) <- [AAA1000]
+18:41:59,522 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id where v1_0.placa=?
+18:41:59,523 TRACE bind:24 - binding parameter (1:VARCHAR) <- [AAB1001]
+18:42:03,824 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id where v1_0.placa=?
+18:42:03,825 TRACE bind:24 - binding parameter (1:VARCHAR) <- [BCD1012]
+18:42:07,529 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id where v1_0.placa=?
+18:42:07,529 TRACE bind:24 - binding parameter (1:VARCHAR) <- [KFC2002]
+18:42:12,312  INFO pooling:601 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/estacionamento]
+18:42:14,518  INFO Util:31 - Util.conectar - lendo arquivo util.properties: 
+18:42:14,518  INFO Util:38 - sgbd => postgresql
+18:42:14,519  INFO Util:39 - banco => estacionamento
+18:42:14,519  INFO Util:40 - ip => localhost
+18:42:14,520  INFO Util:45 - configurando postgresql
+18:42:14,534  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
+18:42:14,538 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+18:42:14,538  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+18:42:14,618  WARN pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+18:42:14,619  INFO pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+18:42:14,619  INFO pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/estacionamento]
+18:42:14,620  INFO pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+18:42:14,620  INFO pooling:170 - HHH10001003: Autocommit mode: false
+18:42:14,621  INFO pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+18:42:14,837  WARN deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+18:42:14,967  INFO JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+18:42:14,968  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@673560df] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+18:42:15,081 DEBUG SQL:135 - select tv1_0.id,tv1_0.nome from TipoVeiculo tv1_0 order by tv1_0.id
+18:42:17,489 DEBUG SQL:135 - select tv1_0.id,tv1_0.nome from TipoVeiculo tv1_0 where tv1_0.nome=?
+18:42:17,489 TRACE bind:24 - binding parameter (1:VARCHAR) <- [carro]
+18:42:17,495 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id order by v1_0.id
+18:42:17,523 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id where v1_0.placa=?
+18:42:17,547 TRACE bind:24 - binding parameter (1:VARCHAR) <- [AAB1001]
+18:42:17,600 DEBUG SQL:135 - delete from Registro where id=?
+18:42:17,601 TRACE bind:24 - binding parameter (1:INTEGER) <- [5]
+18:42:17,628 DEBUG SQL:135 - delete from Registro where id=?
+18:42:17,629 TRACE bind:24 - binding parameter (1:INTEGER) <- [4]
+18:42:17,630 DEBUG SQL:135 - delete from Veiculo where id=?
+18:42:17,630 TRACE bind:24 - binding parameter (1:INTEGER) <- [2]
+18:42:17,641 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id where v1_0.placa=?
+18:42:17,641 TRACE bind:24 - binding parameter (1:VARCHAR) <- [BCD1012]
+18:42:17,646 DEBUG SQL:135 - delete from Registro where id=?
+18:42:17,647 TRACE bind:24 - binding parameter (1:INTEGER) <- [2]
+18:42:17,648 DEBUG SQL:135 - delete from Veiculo where id=?
+18:42:17,648 TRACE bind:24 - binding parameter (1:INTEGER) <- [3]
+18:42:17,746 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id where v1_0.placa=?
+18:42:17,747 TRACE bind:24 - binding parameter (1:VARCHAR) <- [KFC2002]
+18:42:17,749 DEBUG SQL:135 - delete from Registro where id=?
+18:42:17,750 TRACE bind:24 - binding parameter (1:INTEGER) <- [6]
+18:42:17,751 DEBUG SQL:135 - delete from Veiculo where id=?
+18:42:17,751 TRACE bind:24 - binding parameter (1:INTEGER) <- [4]
+18:42:17,755 DEBUG SQL:135 - select tv1_0.id,tv1_0.nome from TipoVeiculo tv1_0 where tv1_0.nome=?
+18:42:17,755 TRACE bind:24 - binding parameter (1:VARCHAR) <- [carro]
+18:42:17,757 DEBUG SQL:135 - delete from TipoVeiculo where id=?
+18:42:17,758 TRACE bind:24 - binding parameter (1:INTEGER) <- [2]
+18:42:17,759 DEBUG SQL:135 - select tv1_0.id,tv1_0.nome from TipoVeiculo tv1_0 order by tv1_0.id
+18:42:36,786 DEBUG SQL:135 - select tv1_0.id,tv1_0.nome from TipoVeiculo tv1_0 where tv1_0.nome=?
+18:42:36,786 TRACE bind:24 - binding parameter (1:VARCHAR) <- [moto]
+18:42:36,789 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id order by v1_0.id
+18:42:36,795 DEBUG SQL:135 - select v1_0.id,v1_0.placa,r1_0.veiculo_id,r1_0.id,r1_0.datahora,r1_0.operacao,t1_0.id,t1_0.nome from Veiculo v1_0 left join Registro r1_0 on v1_0.id=r1_0.veiculo_id left join TipoVeiculo t1_0 on t1_0.id=v1_0.tipoveiculo_id where v1_0.placa=?
+18:42:36,795 TRACE bind:24 - binding parameter (1:VARCHAR) <- [AAA1000]
+18:42:36,797 DEBUG SQL:135 - delete from Registro where id=?
+18:42:36,797 TRACE bind:24 - binding parameter (1:INTEGER) <- [3]
+18:42:36,798 DEBUG SQL:135 - delete from Registro where id=?
+18:42:36,800 TRACE bind:24 - binding parameter (1:INTEGER) <- [1]
+18:42:36,801 DEBUG SQL:135 - delete from Veiculo where id=?
+18:42:36,802 TRACE bind:24 - binding parameter (1:INTEGER) <- [1]
+18:42:36,805 DEBUG SQL:135 - select tv1_0.id,tv1_0.nome from TipoVeiculo tv1_0 where tv1_0.nome=?
+18:42:36,807 TRACE bind:24 - binding parameter (1:VARCHAR) <- [moto]
+18:42:36,809 DEBUG SQL:135 - delete from TipoVeiculo where id=?
+18:42:36,809 TRACE bind:24 - binding parameter (1:INTEGER) <- [1]
+18:42:36,810 DEBUG SQL:135 - select tv1_0.id,tv1_0.nome from TipoVeiculo tv1_0 order by tv1_0.id
+18:42:49,697  INFO pooling:601 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/estacionamento]
